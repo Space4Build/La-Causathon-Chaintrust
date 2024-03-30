@@ -1,106 +1,48 @@
-## Contrato inteligente: Semáforo
+# Integration Kit for Vara Network
 
-## Inicio: Clonar el template para contratos inteligentes
+Welcome to the Integration Kit for Vara Network, a powerful tool to facilitate integration with Vara Network in your projects. This kit provides a solid foundation for interacting with Vara Network and leveraging its capabilities in your application.
 
-**comando:**
-```bash
-git clone https://github.com/Vara-Lab/SmartContractTemplate_v1.git
-```
+## Main Features
 
-## Directorio IO
+- **Detailed Documentation:** A complete guide for quick and easy integration into your application.
+- **Usage Examples:** Practical examples to better understand how to use the kit in real-life situations.
 
-### PASO 1 Definir las acciones para el semaforo: .
-**comando:**
-```rust
-#[derive(Encode, Decode, TypeInfo, Hash, PartialEq, PartialOrd, Eq, Ord, Clone, Copy, Debug)]
-pub enum ActionTrafficLight {
-    // Actions
-     Green,
-     Yellow,
-     Red
-}
+## Prerequisites
 
-```
+Make sure you have the following dependencies installed before starting:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node.js package manager)
 
-### PASO 2 Definir las eventos para el semaforo: .
-**comando:**
-```rust
-#[derive(Encode, Decode, TypeInfo, Hash, PartialEq, PartialOrd, Eq, Ord, Clone, Copy, Debug)]
-pub enum EventTrafficLight {
-    // Actions
-     Green,
-     Yellow,
-     Red
-}
+## Installation
 
-```
+1. Clone this repository to your local machine:
 
-### PASO 3 Definir las acciones, estado y eventos.
-**comando:**
-```rust
-pub struct ContractMetadata;
+    ```bash
+    git clone https://github.com/Vara-Lab/Integration-Kit.git
+    ```
 
-impl Metadata for ContractMetadata{
-     type Init = ();
-     type Handle = InOut<ActionTrafficLight,EventTrafficLight>; // Acciones como entrada y  eventos como salida.
-     type Others = ();
-     type Reply=();
-     type Signal = ();
-     type State = Vec<(ActorId, String)>; // Estado 
+2. Navigate to the project directory:
 
-}
-```
+    ```bash
+    cd Integration-Kit/Chakra-UI-Vite-Template
+    ```
 
+3. Install the dependencies:
 
-## Directorio src
+    ```bash
+    yarn install
+    ```
+    or
+4. Start the project on localhost:
 
-### PASO 1 Definir en el interior de la función Handle y definimos Acción->Transición->Evento.
-**comando:**
-```rust
+    ```bash
+    yarn start
+   or ```
 
-#[no_mangle]
-extern "C" fn handle(){
+## Usage
 
+Refer to the [documentation](./docs) for detailed information on how to use this kit in your project. Here you will find code examples and step-by-step explanations.
 
-    handle_state().expect("Execution Error")
+## License
 
-
-}
-
-    
-
-fn handle_state() -> Result<()> {
-
-        let payload = msg::load()?;
-
-        if let ActionTrafficLight::Green = payload {
-
-            let currentstate = state_mut();
-            currentstate.insert(msg::source(), "Green".to_string());
-            msg::reply(EventTrafficLight::Green,0)?;
-
-        }
-
-        if let ActionTrafficLight::Yellow = payload {
-
-            let currentstate = state_mut();
-            currentstate.insert(msg::source(), "Yellow".to_string());
-            msg::reply(EventTrafficLight::Yellow,0)?;
-
-        }
-
-        if let ActionTrafficLight::Red = payload {
-
-            let currentstate = state_mut();
-            currentstate.insert(msg::source(), "Red".to_string());
-            msg::reply(EventTrafficLight::Red,0)?;
-
-        }
-
-    Ok(())
-    }
-
-
-```
-
-## Despliega el contrato en la plataforma IDEA e interactua con tu contrato.
+This project is under the MIT License. See the [LICENSE](./LICENSE) file for more details.
