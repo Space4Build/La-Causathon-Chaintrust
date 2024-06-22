@@ -5,7 +5,7 @@ Welcome to the Integration Kit for Vara Network, a powerful tool to facilitate i
 ## Open on Gitpod
 
 <p align="center">
-  <a href="https://gitpod.io/#https://github.com/Vara-Lab/Smart-Contract-Template.git" target="_blank">
+  <a href="https://gitpod.io/#https://github.com/Vara-Lab/Integration-Kit.git" target="_blank">
     <img src="https://gitpod.io/button/open-in-gitpod.svg" width="240" alt="Gitpod">
   </a>
 </p>
