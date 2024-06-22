@@ -2,7 +2,7 @@
 
 Welcome to the Integration Kit for Vara Network, a powerful tool to facilitate integration with Vara Network in your projects. This kit provides a solid foundation for interacting with Vara Network and leveraging its capabilities in your application.
 
-## Open Contract on Gitpod
+## Open on Gitpod
 
 <p align="center">
   <a href="https://gitpod.io/#https://github.com/Vara-Lab/Smart-Contract-Template.git" target="_blank">
