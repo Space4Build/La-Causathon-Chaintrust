@@ -4,7 +4,7 @@ import { ApiLoader } from "@/components";
 import { Header } from "@/components/layout";
 import { withProviders } from "@/app/hocs";
 import { useWalletSync } from "@/features/wallet/hooks";
-import { Home } from "./pages/home";
+import { Routing } from "./pages";
 
 function Component() {
   const { isApiReady } = useApi();
@@ -16,9 +16,9 @@ function Component() {
 
   return (
     <>
-      <Header isAccountVisible={isAccountReady}/>
-      {isAppReady ? <Home /> : <ApiLoader />}
-      </>
+      <Header isAccountVisible={isAccountReady} />
+      {isAppReady ? <Routing /> : <ApiLoader />}
+    </>
   );
 }
 
