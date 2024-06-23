@@ -1,0 +1,38 @@
+.certificados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fila {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .elemento img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .elemento.marcado {
+    border: 2px solid blue;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

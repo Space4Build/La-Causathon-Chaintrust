@@ -4,6 +4,7 @@ import { Login } from "./home";
 import { Landing } from "./landing";
 import { Main } from "./main";
 import { Login2 } from "./login/login"; 
+import { Certificados } from "./certificados";
 
 
 const routes = [
@@ -11,6 +12,7 @@ const routes = [
   { path: "/login", Page: Login },
   //{ path: "/cuenta", Page: Cuenta },
   { path: "/main", Page: Main },
+  {path: "/certificados", Page: Certificados}
  
 ];
 

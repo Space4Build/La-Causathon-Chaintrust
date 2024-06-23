@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { web3Enable, web3Accounts } from '@polkadot/extension-dapp';
 import crypto from 'crypto-browserify';
 import { UploadCertificateCall } from './loader'; // Import the UploadCertificateCall component
-import { UploadCertificate } from './UploadCertificate';
+import { UploadCertificate } from './uploadCertificate';
 import image from '/src/data/fondo.png'; // Ensure the path to the background image is correct
 import circleImage from '/src/data/fondo2.png'; // Ensure the path to the circular image is correct
 import { Link } from 'react-router-dom';
@@ -152,9 +152,12 @@ const Login: React.FC = () => {
       <div style={logoContainerStyle}>
         <div style={logoStyle}>
           <div>SmartSign Verifier</div>
-          <Link to="/home" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Link>
-          <Link to="/cuenta" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Cuenta</Link>
-          {/* <Link to="/sign" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Solicitudes</Link> */}
+          <Button as={Link} to="/" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Button>
+
+          <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
+
+          
+
         </div>
         <div style={logoDividerStyle}></div>
       </div>
