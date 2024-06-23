@@ -4,7 +4,7 @@ import { web3FromSource } from "@polkadot/extension-dapp";
 import { ProgramMetadata } from "@gear-js/api";
 import { Button } from "@gear-js/ui";
 
-function UploadCertificate({ walletID, hash, url }) {
+function RequestNewSign() {
   const alert = useAlert();
   const { accounts, account } = useAccount();
   const { api, isApiReady } = useApi();
@@ -16,10 +16,10 @@ function UploadCertificate({ walletID, hash, url }) {
   const message = {
     destination: programID,
     payload: {
-    "uploadCertificate": [
-      walletID,
-      hash,
-      url
+    "requestNewSign": [
+        "w4ll3t_id_company",
+        "648430a35c60ad514dcc99d790d3d0ffe6f4c18855159108a2aeffe26b9ac40b",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL7p9wVTNygKu0vR-nHRIBNKbQnTCt4lboJ1OHHXg-E35l1MBJishZ5t8T&s=10"
     ]
 },
     gasLimit: 9899819245,
@@ -30,7 +30,7 @@ function UploadCertificate({ walletID, hash, url }) {
     if (!account?.address) {
       alert.error("No account found");
       return;
-    }  
+    }
 
     const isVisibleAccount = accounts.some((visibleAccount) => visibleAccount.address === account.address);
     if (!isVisibleAccount) {
@@ -59,7 +59,7 @@ function UploadCertificate({ walletID, hash, url }) {
     }
   };
 
-  return <Button text="uploadCertificate" onClick={signer} />;
+  return <Button text="requestNewSign" onClick={signer} />;
 }
 
-export { UploadCertificate };
+export { RequestNewSign };

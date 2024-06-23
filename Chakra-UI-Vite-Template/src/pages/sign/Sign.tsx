@@ -205,7 +205,7 @@ const Sign: React.FC = () => {
           <img style={heightStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrsaKK3FnZbbPhmWLf7vas3AfU5QH7fIzHoi8LgFwjC621XKGsAsDLUWw&s=10" alt="Image 1"/>
           <div >
             <h3>UCSP</h3>
-            <p>Curso de Integración de Inteligencia Artificial con Ingeniería Industrial en la Universidad Católica San Pablo.</p>
+            <p>Certificación en Gestión Eficiente de Operaciones Industriales, abarcando desde la planificación y optimización de procesos hasta la implementación de prácticas de mejora continua. Aprende estrategias para reducir costos, mejorar la calidad y aumentar la productividad en entornos industriales.</p>
             <SignCertificate walletID="w4ll3t_id_company" />
           </div>
         </HStack>

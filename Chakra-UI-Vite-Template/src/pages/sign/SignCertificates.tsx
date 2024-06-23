@@ -17,7 +17,7 @@ function SignCertificate() {
     destination: programID,
     payload: {
     "signCertificate": [
-        "xxxyyy2",
+        "648430a35c60ad514dcc99d790d3d0ffe6f4c18855159108a2aeffe26b9ac40b",
         "w4ll3t_id_company"
     ]
 },
