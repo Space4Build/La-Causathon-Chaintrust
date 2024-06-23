@@ -47,10 +47,10 @@ const Certificados: React.FC = () => {
   };
 
   const elementos = [
-    { id: 1, titulo: 'Elemento 1', enlaceImagen: 'https://images.vexels.com/media/users/3/130100/isolated/lists/1071e6146bfbbb8018d2c36358a988c4-icono-de-circulo-de-documento.png', wallet: 'wallet1' },
-    { id: 2, titulo: 'Elemento 2', enlaceImagen: 'https://cdn-icons-png.flaticon.com/256/337/337946.png', wallet: 'wallet2' },
-    { id: 3, titulo: 'Elemento 3', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyzVxcc0FcUORB6uKIQQz6a8XaKY59cveV9g&s', wallet: 'wallet3' },
-    { id: 4, titulo: 'Elemento 4', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyKGNMbsLeJHBlLpfYeF4TU18t4zJ4ESnTIQ&s0', wallet: 'wallet4' }
+    { id: 1, titulo: 'Elemento 1', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrsaKK3FnZbbPhmWLf7vas3AfU5QH7fIzHoi8LgFwjC621XKGsAsDLUWw&s=10', wallet: 'wallet1' },
+    { id: 2, titulo: 'Elemento 2', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL7p9wVTNygKu0vR-nHRIBNKbQnTCt4lboJ1OHHXg-E35l1MBJishZ5t8T&s=10', wallet: 'wallet2' },
+    { id: 3, titulo: 'Elemento 3', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShnO35MVt51nvAkG9w9otPLVHj40TAL8LkNIudpChujnx18jX0BFLELyBq&s=10', wallet: 'wallet3' },
+    { id: 4, titulo: 'Elemento 4', enlaceImagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLzzLxid7TRTdUjAYH555Jdsc0e18-UdqiSgsHuoCCXKUn9zZuJg9BsgSX&s=10', wallet: 'wallet4' }
   ];
 
   const empresas = [
@@ -104,21 +104,23 @@ const Certificados: React.FC = () => {
               style={{ backgroundImage: `url(${elemento.enlaceImagen})` }}
               onClick={() => manejarMarcado(elemento.id)}
             >
-              <button className="boton">Start for free</button>
+              <button className="boton">{elemento.titulo}</button>
             </div>
           ))}
         </div>
         <div className="sidebar">
-          {empresas.map(empresa => (
-            <div
-              key={empresa.id}
-              className={`elemento ${marcados2.includes(empresa.id) ? 'marcado' : ''}`}
-              style={{ backgroundImage: `url(${empresa.enlaceImagen})` }}
-              onClick={() => manejarMarcado2(empresa.id)}
-            >
-              <button className="boton-seguir" onClick={manejarSeguirUsuario}>Seguir usuario</button>
-            </div>
-          ))}
+          <div className="sidebar-scroll">
+            {empresas.map(empresa => (
+              <div
+                key={empresa.id}
+                className={`elemento ${marcados2.includes(empresa.id) ? 'marcado' : ''}`}
+                style={{ backgroundImage: `url(${empresa.enlaceImagen})` }}
+                onClick={() => manejarMarcado2(empresa.id)}
+              >
+                <button className="boton-seguir" onClick={manejarSeguirUsuario}>{empresa.nombre}</button>
+              </div>
+            ))}
+          </div>
         </div>
         <Button
           className="solicitar-firma-boton"

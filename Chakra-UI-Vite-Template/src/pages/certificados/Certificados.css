@@ -30,8 +30,8 @@
 }
 
 .elemento {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   background-color: #2a2a5a; /* Box background */
   border-radius: 10px;
   display: flex;
@@ -40,6 +40,9 @@
   cursor: pointer;
   transition: transform 0.2s, background-color 0.2s;
   position: relative;
+  background-size:contain; /* Ensure the background covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Avoid repeating the background image */
 }
 
 .elemento:hover {
@@ -101,8 +104,14 @@
   border-radius: 10px 0 0 10px;
   width: 200px; /* Fixed width for sidebar */
   margin-top: 60px; /* Adjust this value to account for the logo container */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
+.sidebar-scroll {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .sidebar-item {
   background-color: #3a3a6a; /* Sidebar item background */
   border-radius: 10px;
