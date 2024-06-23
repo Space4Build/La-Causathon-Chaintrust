@@ -7,6 +7,7 @@ import image from '/src/data/fondo.png'; // Ensure the path to the background im
 import circleImage from '/src/data/fondo2.png'; // Ensure the path to the circular image is correct
 import { Link } from 'react-router-dom';
 import { Center, HStack, VStack, Button } from "@chakra-ui/react";
+import { ReadTags } from './ReadTags';
 
 const Login: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -157,6 +158,11 @@ const Login: React.FC = () => {
           <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
 
           <Button as={Link} to="/sign" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Solicitudes</Button>
+          
+
+          {/* <div style={{ marginRight: '20px', color: '#fff', textDecoration: 'none' }}>
+            <ReadTags walletID={account} />
+          </div> */}
           
 
         </div>

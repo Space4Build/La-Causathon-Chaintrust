@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@chakra-ui/react";
 import './Certificados.css';
+import { RequestNewSign } from "./RequestNewSign";
 
 const Certificados: React.FC = () => {
   const [marcados, setMarcados] = useState<number[]>([]);
@@ -122,13 +123,17 @@ const Certificados: React.FC = () => {
             ))}
           </div>
         </div>
-        <Button
+        {/* <Button
           className="solicitar-firma-boton"
           onClick={manejarSolicitudFirma}
           disabled={marcados.length === 0 || !usuarioSeguido}
         >
           Solicitar firma
-        </Button>
+        </Button> */}
+
+        <RequestNewSign />
+
+
         
       </div>
     </div>
