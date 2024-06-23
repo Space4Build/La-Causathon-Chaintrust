@@ -11,14 +11,15 @@
   position: relative;
 }
 
-.main-content {
+.main-content {                                                                                                                                                                                            
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  flex-direction: column; /* Ensure elements are stacked vertically */
+  flex-direction: column; 
   position: relative;
 }
+
 
 .certificados {
   display: grid;
