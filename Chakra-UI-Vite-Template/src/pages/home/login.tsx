@@ -157,8 +157,6 @@ const Login: React.FC = () => {
 
           <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
 
-          
-
         </div>
         <div style={logoDividerStyle}></div>
       </div>
