@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { web3Enable, web3Accounts } from '@polkadot/extension-dapp';
 import crypto from 'crypto-browserify';
 import { UploadCertificateCall } from './loader'; // Import the UploadCertificateCall component
-import { UploadCertificate } from './uploadCertificate';
+import { UploadCertificate } from './UploadCertificate';
 import image from '/src/data/fondo.png'; // Ensure the path to the background image is correct
 import circleImage from '/src/data/fondo2.png'; // Ensure the path to the circular image is correct
 import { Link } from 'react-router-dom';
@@ -172,7 +172,9 @@ const Login: React.FC = () => {
                   <p>{fileHash}</p>
                 </div>
               )}
-              <UploadCertificate walletID="your_wallet_id"  hash="{fileHash}"  url="your_url" /> {/* Use UploadCertificateCall component */}     
+              {/* <UploadCertificate /> Use UploadCertificateCall component      */}
+              <UploadCertificate walletID={account} hash={fileHash} url="https://example.com" />
+
         </div>
         <div style={rightContentStyle}>
           <img src={circleImage} alt="Circular" style={circleImageStyle} />
