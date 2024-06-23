@@ -153,8 +153,12 @@ const Login: React.FC = () => {
       <div style={logoContainerStyle}>
         <div style={logoStyle}>
           <div>SmartSign Verifier</div>
-          <Link to="/home" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Link>
-          <Link to="/cuenta" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Cuenta</Link>
+          <Button as={Link} to="/" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Button>
+
+          <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
+
+          
+
         </div>
         <div style={logoDividerStyle}></div>
       </div>
