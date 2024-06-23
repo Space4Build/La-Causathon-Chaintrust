@@ -175,8 +175,6 @@ const Login2: React.FC = () => {
       <div style={logoContainerStyle}>
         <div style={logoStyle}>
           <div>SmartSign Verifier</div>
-          <Link to="/home" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Link>
-          <Link to="/cuenta" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Cuenta</Link>
         </div>
         <div style={logoDividerStyle}></div>
       </div>

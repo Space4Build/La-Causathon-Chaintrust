@@ -91,7 +91,7 @@ const Certificados: React.FC = () => {
       <div style={logoContainerStyle}>
         <div style={logoStyle}>
           <div>SmartSign Verifier</div>
-          <Button as={Link} to="/" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Home</Button>
+          <Button as={Link} to="/" style={{ marginLeft: '20px', color: '#0', textDecoration: 'none' }}>Home</Button>
           <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
         </div>
         <div style={logoDividerStyle}></div>
