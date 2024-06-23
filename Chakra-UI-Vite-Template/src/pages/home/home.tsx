@@ -17,11 +17,6 @@ function Home() {
             Route 2
           </Button>
         </VStack>
-        <VStack>
-          <GreenColor />
-          <YellowColor />
-          <RedColor />
-        </VStack>
         <ReadState />
       </HStack>
     </Center>

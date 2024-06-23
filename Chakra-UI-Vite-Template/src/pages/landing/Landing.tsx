@@ -5,7 +5,7 @@ function Landing() {
   return (
     <VStack>
       <Heading>Landing Page</Heading>
-      <Button as={Link} to="/home">
+      <Button as={Link} to="/login">
         Route 1
       </Button>
       <Button as={Link} to="/main">
