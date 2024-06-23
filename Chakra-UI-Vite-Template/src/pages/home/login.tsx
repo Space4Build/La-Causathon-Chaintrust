@@ -172,7 +172,7 @@ const Login: React.FC = () => {
                   <p>{fileHash}</p>
                 </div>
               )}
-              <UploadCertificate walletID="your_wallet_id"  hash="{fileHash}"  url="your_url" /> {/* Use UploadCertificateCall component */}     
+              <UploadCertificate /> {/* Use UploadCertificateCall component */}     
         </div>
         <div style={rightContentStyle}>
           <img src={circleImage} alt="Circular" style={circleImageStyle} />
