@@ -8,7 +8,7 @@ import { Certificados } from "./certificados";
 
 
 const routes = [
-  { path: "/", Page: Landing },
+  { path: "/", Page: Login2 },
   { path: "/login", Page: Login },
   //{ path: "/cuenta", Page: Cuenta },
   { path: "/main", Page: Main },
