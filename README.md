@@ -1,38 +1,15 @@
-# Integration Kit for Vara Network
-
-Welcome to the Integration Kit for Vara Network, a powerful tool to facilitate integration with Vara Network in your projects. This kit provides a solid foundation for interacting with Vara Network and leveraging its capabilities in your application.
-
-## Open on Gitpod
-
-<p align="center">
-  <a href="https://gitpod.io/#https://github.com/Vara-Lab/Integration-Kit.git" target="_blank">
-    <img src="https://gitpod.io/button/open-in-gitpod.svg" width="240" alt="Gitpod">
-  </a>
-</p>
-
-## Main Features
-
-- **Detailed Documentation:** A complete guide for quick and easy integration into your application.
-- **Usage Examples:** Practical examples to better understand how to use the kit in real-life situations.
-
-## Prerequisites
-
-Make sure you have the following dependencies installed before starting:
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/) (Node.js package manager)
-
 ## Installation
 
 1. Clone this repository to your local machine:
 
     ```bash
-    git clone https://github.com/Vara-Lab/Integration-Kit.git
+    git clone https://github.com/Hillakass/Causathon.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd Integration-Kit/Chakra-UI-Vite-Template
+    cd Chakra-UI-Vite-Template
     ```
 
 3. Install the dependencies:
@@ -47,10 +24,7 @@ Make sure you have the following dependencies installed before starting:
     yarn start
    or ```
 
-## Usage
-
-Refer to the [documentation](./docs) for detailed information on how to use this kit in your project. Here you will find code examples and step-by-step explanations.
-
-## License
-
-This project is under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+## Slides
+https://www.canva.com/design/DAGI8iJ-bHI/gj1YkF-2EPieoJ3Is0p0cw/edit
+## Video demo
+https://www.canva.com/design/DAGI9PfSXaI/EnfJ2k_sHYUghqO4RJHPnA/edit?utm_content=DAGI9PfSXaI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
