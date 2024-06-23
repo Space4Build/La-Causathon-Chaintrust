@@ -22,7 +22,6 @@ const Certificados: React.FC<CertificadosProps> = ({ elementosFila1 = [], elemen
   };
 
   const manejarBoton = () => {
-    // Aquí puedes manejar lo que necesites hacer con los elementos marcados
     console.log('Elementos marcados:', marcados);
   };
 
@@ -30,8 +29,11 @@ const Certificados: React.FC<CertificadosProps> = ({ elementosFila1 = [], elemen
     <div className="fila">
       {elementos.map(elemento => (
         <div key={elemento.id} className={`elemento ${marcados.includes(elemento.id) ? 'marcado' : ''}`} onClick={() => manejarMarcado(elemento.id)}>
-          <img src={elemento.enlaceImagen} alt={elemento.titulo} />
+          <div className="imagen-contenedor">
+            <img src={elemento.enlaceImagen} alt={elemento.titulo} />
+          </div>
           <p>{elemento.titulo}</p>
+          <button>Start for free</button>
         </div>
       ))}
     </div>
