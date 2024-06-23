@@ -156,6 +156,7 @@ const Login: React.FC = () => {
 
           <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
 
+          <Button as={Link} to="/sign" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Solicitudes</Button>
           
 
         </div>
