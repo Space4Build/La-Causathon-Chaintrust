@@ -136,11 +136,7 @@ const Login2: React.FC = () => {
     fontWeight: 'bold' as 'bold'
   };
 
-  const subheadingStyle = {
-    fontSize: '24px',
-    marginBottom: '30px',
-    fontWeight: 'bold' as 'bold'
-  };
+
 
   const logoContainerStyle = {
     display: 'flex' as 'flex',
@@ -189,7 +185,7 @@ const Login2: React.FC = () => {
             <div style={welcomeStyle}>
               <h2 style={headingStyle}>Login</h2>
               <Button
-                as={Link} to = "../home"
+                as={Link} to = "/login"
                 onClick={handleLogin}
                 style={buttonStyle}
                 onMouseOver={(e) => (e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor)}
