@@ -33,6 +33,8 @@ import { Link } from 'react-router-dom';
 import { Center, HStack, VStack, Button, Heading } from "@chakra-ui/react";
 // import { Link } from "react-router-dom";
 import { ReadRequestCertificates } from "./ReadRequestCertificates";
+import { SignCertificate } from "./SignCertificates";
+import { px } from 'framer-motion';
 
 const Sign: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -97,10 +99,10 @@ const Sign: React.FC = () => {
 
   const contentStyle = {
     display: 'flex' as 'flex',
-    justifyContent: 'space-between' as 'space-between',
+    // justifyContent: 'space-between' as 'space-between',
     alignItems: 'center' as 'center',
     height: '100%',
-    padding: '0 10%' // Adjust padding as needed
+    padding: '100px' // Adjust padding as needed
   };
 
   const leftContentStyle = {
@@ -169,7 +171,16 @@ const Sign: React.FC = () => {
 
   const welcomeStyle = {
     textAlign: 'left' as 'left',
-    marginBottom: '30px'
+    marginBottom: '25px'
+  };
+
+  
+  const paddingStyle = {
+    padding: '40px'
+  };
+
+  const heightStyle = {
+    height: '200px'
   };
 
   return (
@@ -184,25 +195,51 @@ const Sign: React.FC = () => {
 
           <Button as={Link} to="/sign" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Solicitudes</Button>
           
-
         </div>
         <div style={logoDividerStyle}></div>
       </div>
-      <div style={contentStyle}>
+
+      <VStack style={contentStyle}>
+
+        <HStack style={paddingStyle}>
+          <img style={heightStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdrsaKK3FnZbbPhmWLf7vas3AfU5QH7fIzHoi8LgFwjC621XKGsAsDLUWw&s=10" alt="Image 1"/>
+          <div >
+            <h3>UCSP</h3>
+            <p>Curso de Integración de Inteligencia Artificial con Ingeniería Industrial en la Universidad Católica San Pablo.</p>
+            <SignCertificate walletID="w4ll3t_id_company" />
+          </div>
+        </HStack>
+
+        <HStack style={paddingStyle}>
+          <img style={heightStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL7p9wVTNygKu0vR-nHRIBNKbQnTCt4lboJ1OHHXg-E35l1MBJishZ5t8T&s=10" alt="Image 2"/>
+          <div >
+            <h3>Google</h3>
+            <p>Curso avanzado en diseño gráfico, enfocado en técnicas de ilustración digital, tipografía creativa y diseño de marca. Aprende a utilizar herramientas como Adobe Illustrator y Adobe Photoshop para crear composiciones visuales impactantes.</p>
+            <SignCertificate walletID="w4ll3t_id_company" />
+          </div>
+        </HStack>
+
+        <HStack style={paddingStyle}>
+          <img style={heightStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShnO35MVt51nvAkG9w9otPLVHj40TAL8LkNIudpChujnx18jX0BFLELyBq&s=10" alt="Image 2"/>
+          <div >
+            <h3>Microsoft</h3>
+            <p>Certificación en Excel para profesionales, cubriendo desde funciones básicas hasta avanzadas, incluyendo análisis de datos, tablas dinámicas y automatización con macros. Domina la herramienta indispensable para la gestión y análisis de datos en entornos empresariales.</p>
+            <SignCertificate walletID="w4ll3t_id_company" />
+          </div>
+        </HStack>
 
 
-        <div style={leftContentStyle}>
+
+        {/* <div style={leftContentStyle}>
           <div style={welcomeStyle}>
             <p><strong>{account}</strong></p>
           </div>
           <ReadRequestCertificates walletID="w4ll3t_id_company" />
-        </div>
+        </div> */}
 
 
-        <div style={rightContentStyle}>
-          <img src={circleImage} alt="Circular" style={circleImageStyle} />
-        </div>
-      </div>
+
+      </VStack>
     </div>
   );
 };
