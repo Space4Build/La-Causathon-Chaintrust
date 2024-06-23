@@ -7,11 +7,13 @@ import image from '/src/data/fondo.png'; // Ensure the path to the background im
 import circleImage from '/src/data/fondo2.png'; // Ensure the path to the circular image is correct
 import { Link } from 'react-router-dom';
 import { Center, HStack, VStack, Button } from "@chakra-ui/react";
+import { ReadTags } from './ReadTags';
 
 const Login: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [account, setAccount] = useState<string | null>(null);
   const [fileHash, setFileHash] = useState<string | null>(null);
+  const [url, setUrl] = useState<string>('');
 
   useEffect(() => {
     const attemptedLogin = localStorage.getItem('attemptedLogin');
@@ -36,18 +38,16 @@ const Login: React.FC = () => {
     }
   }, []);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const data = e.target?.result as ArrayBuffer;
-        const hash = crypto.createHash('sha256');
-        hash.update(new Uint8Array(data));
-        const hashString = hash.digest('hex');
-        setFileHash(hashString);
-      };
-      reader.readAsArrayBuffer(file);
+  const handleUrlSubmit = async () => {
+    try {
+      const response = await fetch(url);
+      const data = await response.arrayBuffer();
+      const hash = crypto.createHash('sha256');
+      hash.update(new Uint8Array(data));
+      const hashString = hash.digest('hex');
+      setFileHash(hashString);
+    } catch (error) {
+      console.error('Error fetching the image:', error);
     }
   };
 
@@ -105,7 +105,7 @@ const Login: React.FC = () => {
     padding: '15px',
     borderRadius: '5px',
     border: '1px solid #ccc',
-    width: '250px',
+    width: '350px',
     backgroundColor: '#2A2A3C',
     color: '#fff'
   };
@@ -157,24 +157,39 @@ const Login: React.FC = () => {
 
           <Button as={Link} to="/certificados" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Certificados</Button>
 
+          <Button as={Link} to="/sign" style={{ marginLeft: '20px', color: '#fff', textDecoration: 'none' }}>Solicitudes</Button>
+          
+
+          {/* <div style={{ marginRight: '20px', color: '#fff', textDecoration: 'none' }}>
+            <ReadTags walletID={account} />
+          </div> */}
+          
+
         </div>
         <div style={logoDividerStyle}></div>
       </div>
       <div style={contentStyle}>
         <div style={leftContentStyle}>
-              <div style={welcomeStyle}>
-                <h2 style={headingStyle}>Welcome</h2>
-                <h2 style={headingStyle}>Your account address is:</h2>
-                <p><strong>{account}</strong></p>
-              </div>
-              <input type="file" onChange={handleFileUpload} style={inputFileStyle} />
-              {fileHash && (
-                <div>
-                  <h3>File Hash:</h3>
-                  <p>{fileHash}</p>
-                </div>
-              )}
-              <UploadCertificate /> {/* Use UploadCertificateCall component */}     
+          <div style={welcomeStyle}>
+            <h2 style={headingStyle}>Welcome</h2>
+            <h2 style={headingStyle}>Your account address is:</h2>
+            <p><strong>{account}</strong></p>
+          </div>
+          <input 
+            type="text" 
+            value={url} 
+            onChange={(e) => setUrl(e.target.value)} 
+            placeholder="Enter image URL" 
+            style={inputFileStyle} 
+          />
+          <Button onClick={handleUrlSubmit} colorScheme="blue" style={{ marginTop: '10px' }}>Submit URL</Button>
+          {fileHash && (
+            <div>
+              <h3>File Hash:</h3>
+              <p>{fileHash}</p>
+            </div>
+          )}
+          <UploadCertificate walletID={account} hash={fileHash} url={url} />
         </div>
         <div style={rightContentStyle}>
           <img src={circleImage} alt="Circular" style={circleImageStyle} />
@@ -184,4 +199,4 @@ const Login: React.FC = () => {
   );
 };
 
-export {Login};
+export { Login };

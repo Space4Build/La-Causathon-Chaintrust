@@ -30,7 +30,7 @@ function UploadCertificate({ walletID, hash, url }) {
     if (!account?.address) {
       alert.error("No account found");
       return;
-    }
+    }  
 
     const isVisibleAccount = accounts.some((visibleAccount) => visibleAccount.address === account.address);
     if (!isVisibleAccount) {
