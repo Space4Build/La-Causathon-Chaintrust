@@ -175,6 +175,7 @@ const Login2: React.FC = () => {
       <div style={logoContainerStyle}>
         <div style={logoStyle}>
           <div>SmartSign Verifier</div>
+          
         </div>
         <div style={logoDividerStyle}></div>
       </div>
